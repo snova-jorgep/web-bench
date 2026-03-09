@@ -54,20 +54,24 @@ def _build_model_entries(cfg: dict) -> list[dict]:
 
 
 def _inject_models(new_entries: list[dict]) -> str:
-    """Add our provider entries to model.json; return the original content for restore."""
+    """Add/update our provider entries in model.json; return the original content for restore."""
     original = model_json_path.read_text(encoding="utf-8")
     data = json.loads(original)
 
-    existing_titles = {m.get("title", m.get("model")) for m in data["models"]}
-    added = 0
+    # Build index of existing entries by title for O(1) lookup
+    existing_by_title = {m.get("title", m.get("model")): i for i, m in enumerate(data["models"])}
+    added = updated = 0
     for entry in new_entries:
-        if entry["title"] not in existing_titles:
+        title = entry["title"]
+        if title in existing_by_title:
+            data["models"][existing_by_title[title]] = entry  # update in-place (picks up new apiBase)
+            updated += 1
+        else:
             data["models"].append(entry)
             added += 1
 
     model_json_path.write_text(json.dumps(data, indent=2), encoding="utf-8")
-    print(f"[SETUP] Injected {added} model entries into model.json "
-          f"({len(new_entries) - added} already present).")
+    print(f"[SETUP] model.json: {added} added, {updated} updated.")
     return original
 
 
