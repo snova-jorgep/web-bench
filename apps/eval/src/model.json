@@ -279,6 +279,391 @@
       "title": "ollama/mistral-small",
       "provider": "ollama",
       "model": "mistral-small"
+    },
+    {
+      "model": "MiniMax-M2.5",
+      "provider": "openai",
+      "apiBase": "https://api.sambanova.ai/v1",
+      "apiKey": "{{SAMBANOVA_API_KEY}}",
+      "title": "SambaNova/MiniMax-M2.5"
+    },
+    {
+      "model": "accounts/fireworks/models/llama-v3p1-405b-instruct",
+      "provider": "openai",
+      "apiBase": "https://api.fireworks.ai/inference/v1",
+      "apiKey": "{{FIREWORKS_API_KEY}}",
+      "title": "Fireworks/Meta-Llama-3.1-405B-Instruct"
+    },
+    {
+      "model": "accounts/fireworks/models/llama-v3p3-70b-instruct",
+      "provider": "openai",
+      "apiBase": "https://api.fireworks.ai/inference/v1",
+      "apiKey": "{{FIREWORKS_API_KEY}}",
+      "title": "Fireworks/Meta-Llama-3.3-70B-Instruct"
+    },
+    {
+      "model": "accounts/fireworks/models/llama4-scout-instruct-basic",
+      "provider": "openai",
+      "apiBase": "https://api.fireworks.ai/inference/v1",
+      "apiKey": "{{FIREWORKS_API_KEY}}",
+      "title": "Fireworks/Llama-4-Scout-17B-16E-Instruct"
+    },
+    {
+      "model": "accounts/fireworks/models/llama4-maverick-instruct-basic",
+      "provider": "openai",
+      "apiBase": "https://api.fireworks.ai/inference/v1",
+      "apiKey": "{{FIREWORKS_API_KEY}}",
+      "title": "Fireworks/Llama-4-Maverick-17B-128E-Instruct"
+    },
+    {
+      "model": "accounts/fireworks/models/deepseek-v3-0324",
+      "provider": "openai",
+      "apiBase": "https://api.fireworks.ai/inference/v1",
+      "apiKey": "{{FIREWORKS_API_KEY}}",
+      "title": "Fireworks/DeepSeek-V3-0324"
+    },
+    {
+      "model": "accounts/fireworks/models/deepseek-v3p1",
+      "provider": "openai",
+      "apiBase": "https://api.fireworks.ai/inference/v1",
+      "apiKey": "{{FIREWORKS_API_KEY}}",
+      "title": "Fireworks/DeepSeek-V3.1"
+    },
+    {
+      "model": "accounts/fireworks/models/deepseek-r1-0528",
+      "provider": "openai",
+      "apiBase": "https://api.fireworks.ai/inference/v1",
+      "apiKey": "{{FIREWORKS_API_KEY}}",
+      "title": "Fireworks/DeepSeek-R1-0528"
+    },
+    {
+      "model": "accounts/fireworks/models/qwen3-30b-a3b",
+      "provider": "openai",
+      "apiBase": "https://api.fireworks.ai/inference/v1",
+      "apiKey": "{{FIREWORKS_API_KEY}}",
+      "title": "Fireworks/Qwen3-32B"
+    },
+    {
+      "model": "accounts/fireworks/models/gpt-oss-120b",
+      "provider": "openai",
+      "apiBase": "https://api.fireworks.ai/inference/v1",
+      "apiKey": "{{FIREWORKS_API_KEY}}",
+      "title": "Fireworks/gpt-oss-120b"
+    },
+    {
+      "model": "accounts/fireworks/models/llama-v3p1-8b-instruct",
+      "provider": "openai",
+      "apiBase": "https://api.fireworks.ai/inference/v1",
+      "apiKey": "{{FIREWORKS_API_KEY}}",
+      "title": "Fireworks/Meta-Llama-3.1-8B-Instruct"
+    },
+    {
+      "model": "accounts/fireworks/models/deepseek-v3p1-terminus",
+      "provider": "openai",
+      "apiBase": "https://api.fireworks.ai/inference/v1",
+      "apiKey": "{{FIREWORKS_API_KEY}}",
+      "title": "Fireworks/DeepSeek-V3.1-Terminus"
+    },
+    {
+      "model": "accounts/fireworks/models/qwen3-235b-a22b-instruct-2507",
+      "provider": "openai",
+      "apiBase": "https://api.fireworks.ai/inference/v1",
+      "apiKey": "{{FIREWORKS_API_KEY}}",
+      "title": "Fireworks/Qwen3-235B"
+    },
+    {
+      "model": "accounts/fireworks/models/deepseek-v3p2",
+      "provider": "openai",
+      "apiBase": "https://api.fireworks.ai/inference/v1",
+      "apiKey": "{{FIREWORKS_API_KEY}}",
+      "title": "Fireworks/DeepSeek-V3.2"
+    },
+    {
+      "model": "accounts/fireworks/models/minimax-m2p5",
+      "provider": "openai",
+      "apiBase": "https://api.fireworks.ai/inference/v1",
+      "apiKey": "{{FIREWORKS_API_KEY}}",
+      "title": "Fireworks/MiniMax-M2.5"
+    },
+    {
+      "model": "llama-3.3-70b-versatile",
+      "provider": "openai",
+      "apiBase": "https://api.groq.com/openai/v1",
+      "apiKey": "{{GROQ_API_KEY}}",
+      "title": "Groq/Meta-Llama-3.3-70B-Instruct"
+    },
+    {
+      "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+      "provider": "openai",
+      "apiBase": "https://api.groq.com/openai/v1",
+      "apiKey": "{{GROQ_API_KEY}}",
+      "title": "Groq/Llama-4-Scout-17B-16E-Instruct"
+    },
+    {
+      "model": "meta-llama/llama-4-maverick-17b-128e-instruct",
+      "provider": "openai",
+      "apiBase": "https://api.groq.com/openai/v1",
+      "apiKey": "{{GROQ_API_KEY}}",
+      "title": "Groq/Llama-4-Maverick-17B-128E-Instruct"
+    },
+    {
+      "model": "qwen/qwen3-32b",
+      "provider": "openai",
+      "apiBase": "https://api.groq.com/openai/v1",
+      "apiKey": "{{GROQ_API_KEY}}",
+      "title": "Groq/Qwen3-32B"
+    },
+    {
+      "model": "openai/gpt-oss-120b",
+      "provider": "openai",
+      "apiBase": "https://api.groq.com/openai/v1",
+      "apiKey": "{{GROQ_API_KEY}}",
+      "title": "Groq/gpt-oss-120b"
+    },
+    {
+      "model": "llama-3.1-8b-instant",
+      "provider": "openai",
+      "apiBase": "https://api.groq.com/openai/v1",
+      "apiKey": "{{GROQ_API_KEY}}",
+      "title": "Groq/Meta-Llama-3.1-8B-Instruct"
+    },
+    {
+      "model": "llama-3.3-70b",
+      "provider": "openai",
+      "apiBase": "https://api.cerebras.ai/v1",
+      "apiKey": "{{CEREBRAS_API_KEY}}",
+      "title": "Cerebras/Meta-Llama-3.3-70B-Instruct"
+    },
+    {
+      "model": "llama-4-scout-17b-16e-instruct",
+      "provider": "openai",
+      "apiBase": "https://api.cerebras.ai/v1",
+      "apiKey": "{{CEREBRAS_API_KEY}}",
+      "title": "Cerebras/Llama-4-Scout-17B-16E-Instruct"
+    },
+    {
+      "model": "qwen-3-32b",
+      "provider": "openai",
+      "apiBase": "https://api.cerebras.ai/v1",
+      "apiKey": "{{CEREBRAS_API_KEY}}",
+      "title": "Cerebras/Qwen3-32B"
+    },
+    {
+      "model": "gpt-oss-120b",
+      "provider": "openai",
+      "apiBase": "https://api.cerebras.ai/v1",
+      "apiKey": "{{CEREBRAS_API_KEY}}",
+      "title": "Cerebras/gpt-oss-120b"
+    },
+    {
+      "model": "llama3.1-8b",
+      "provider": "openai",
+      "apiBase": "https://api.cerebras.ai/v1",
+      "apiKey": "{{CEREBRAS_API_KEY}}",
+      "title": "Cerebras/Meta-Llama-3.1-8B-Instruct"
+    },
+    {
+      "model": "qwen-3-235b-a22b-instruct-2507",
+      "provider": "openai",
+      "apiBase": "https://api.cerebras.ai/v1",
+      "apiKey": "{{CEREBRAS_API_KEY}}",
+      "title": "Cerebras/Qwen3-235B"
+    },
+    {
+      "model": "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+      "provider": "openai",
+      "apiBase": "https://api.together.xyz/v1",
+      "apiKey": "{{TOGETHER_API_KEY}}",
+      "title": "Together/Meta-Llama-3.1-405B-Instruct"
+    },
+    {
+      "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+      "provider": "openai",
+      "apiBase": "https://api.together.xyz/v1",
+      "apiKey": "{{TOGETHER_API_KEY}}",
+      "title": "Together/Meta-Llama-3.3-70B-Instruct"
+    },
+    {
+      "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "provider": "openai",
+      "apiBase": "https://api.together.xyz/v1",
+      "apiKey": "{{TOGETHER_API_KEY}}",
+      "title": "Together/Llama-4-Scout-17B-16E-Instruct"
+    },
+    {
+      "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "provider": "openai",
+      "apiBase": "https://api.together.xyz/v1",
+      "apiKey": "{{TOGETHER_API_KEY}}",
+      "title": "Together/Llama-4-Maverick-17B-128E-Instruct"
+    },
+    {
+      "model": "deepseek-ai/DeepSeek-V3",
+      "provider": "openai",
+      "apiBase": "https://api.together.xyz/v1",
+      "apiKey": "{{TOGETHER_API_KEY}}",
+      "title": "Together/DeepSeek-V3-0324"
+    },
+    {
+      "model": "deepseek-ai/DeepSeek-V3.1",
+      "provider": "openai",
+      "apiBase": "https://api.together.xyz/v1",
+      "apiKey": "{{TOGETHER_API_KEY}}",
+      "title": "Together/DeepSeek-V3.1"
+    },
+    {
+      "model": "deepseek-ai/DeepSeek-R1",
+      "provider": "openai",
+      "apiBase": "https://api.together.xyz/v1",
+      "apiKey": "{{TOGETHER_API_KEY}}",
+      "title": "Together/DeepSeek-R1-0528"
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "provider": "openai",
+      "apiBase": "https://api.together.xyz/v1",
+      "apiKey": "{{TOGETHER_API_KEY}}",
+      "title": "Together/Qwen3-32B"
+    },
+    {
+      "model": "openai/gpt-oss-120b",
+      "provider": "openai",
+      "apiBase": "https://api.together.xyz/v1",
+      "apiKey": "{{TOGETHER_API_KEY}}",
+      "title": "Together/gpt-oss-120b"
+    },
+    {
+      "model": "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo",
+      "provider": "openai",
+      "apiBase": "https://api.together.xyz/v1",
+      "apiKey": "{{TOGETHER_API_KEY}}",
+      "title": "Together/Meta-Llama-3.1-8B-Instruct"
+    },
+    {
+      "model": "Qwen/Qwen3-235B-A22B-Instruct-2507-tput",
+      "provider": "openai",
+      "apiBase": "https://api.together.xyz/v1",
+      "apiKey": "{{TOGETHER_API_KEY}}",
+      "title": "Together/Qwen3-235B"
+    },
+    {
+      "model": "MiniMaxAI/MiniMax-M2.5",
+      "provider": "openai",
+      "apiBase": "https://api.together.xyz/v1",
+      "apiKey": "{{TOGETHER_API_KEY}}",
+      "title": "Together/MiniMax-M2.5"
+    },
+    {
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "provider": "openai",
+      "apiBase": "https://api.novita.ai/openai/v1",
+      "apiKey": "{{NOVITA_API_KEY}}",
+      "title": "Novita/Meta-Llama-3.3-70B-Instruct"
+    },
+    {
+      "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+      "provider": "openai",
+      "apiBase": "https://api.novita.ai/openai/v1",
+      "apiKey": "{{NOVITA_API_KEY}}",
+      "title": "Novita/Llama-4-Scout-17B-16E-Instruct"
+    },
+    {
+      "model": "meta-llama/llama-4-maverick-17b-128e-instruct-fp8",
+      "provider": "openai",
+      "apiBase": "https://api.novita.ai/openai/v1",
+      "apiKey": "{{NOVITA_API_KEY}}",
+      "title": "Novita/Llama-4-Maverick-17B-128E-Instruct"
+    },
+    {
+      "model": "deepseek/deepseek-v3-0324",
+      "provider": "openai",
+      "apiBase": "https://api.novita.ai/openai/v1",
+      "apiKey": "{{NOVITA_API_KEY}}",
+      "title": "Novita/DeepSeek-V3-0324"
+    },
+    {
+      "model": "deepseek/deepseek-v3.1",
+      "provider": "openai",
+      "apiBase": "https://api.novita.ai/openai/v1",
+      "apiKey": "{{NOVITA_API_KEY}}",
+      "title": "Novita/DeepSeek-V3.1"
+    },
+    {
+      "model": "deepseek/deepseek-r1-0528",
+      "provider": "openai",
+      "apiBase": "https://api.novita.ai/openai/v1",
+      "apiKey": "{{NOVITA_API_KEY}}",
+      "title": "Novita/DeepSeek-R1-0528"
+    },
+    {
+      "model": "qwen/qwen3-32b-fp8",
+      "provider": "openai",
+      "apiBase": "https://api.novita.ai/openai/v1",
+      "apiKey": "{{NOVITA_API_KEY}}",
+      "title": "Novita/Qwen3-32B"
+    },
+    {
+      "model": "openai/gpt-oss-120b",
+      "provider": "openai",
+      "apiBase": "https://api.novita.ai/openai/v1",
+      "apiKey": "{{NOVITA_API_KEY}}",
+      "title": "Novita/gpt-oss-120b"
+    },
+    {
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "provider": "openai",
+      "apiBase": "https://api.novita.ai/openai/v1",
+      "apiKey": "{{NOVITA_API_KEY}}",
+      "title": "Novita/Meta-Llama-3.1-8B-Instruct"
+    },
+    {
+      "model": "deepseek/deepseek-v3.1-terminus",
+      "provider": "openai",
+      "apiBase": "https://api.novita.ai/openai/v1",
+      "apiKey": "{{NOVITA_API_KEY}}",
+      "title": "Novita/DeepSeek-V3.1-Terminus"
+    },
+    {
+      "model": "qwen/qwen3-235b-a22b-instruct-2507",
+      "provider": "openai",
+      "apiBase": "https://api.novita.ai/openai/v1",
+      "apiKey": "{{NOVITA_API_KEY}}",
+      "title": "Novita/Qwen3-235B"
+    },
+    {
+      "model": "deepseek/deepseek-v3.2",
+      "provider": "openai",
+      "apiBase": "https://api.novita.ai/openai/v1",
+      "apiKey": "{{NOVITA_API_KEY}}",
+      "title": "Novita/DeepSeek-V3.2"
+    },
+    {
+      "model": "minimax/minimax-m2.5",
+      "provider": "openai",
+      "apiBase": "https://api.novita.ai/openai/v1",
+      "apiKey": "{{NOVITA_API_KEY}}",
+      "title": "Novita/MiniMax-M2.5"
+    },
+    {
+      "model": "DeepSeek-V3.1",
+      "provider": "openai",
+      "apiBase": "https://api.corethink.ai/v1/sambanova/code",
+      "apiKey": "{{CORETHINK_API_KEY}}",
+      "title": "Corethink/DeepSeek-V3.1"
+    },
+    {
+      "model": "DeepSeek-R1-0528",
+      "provider": "openai",
+      "apiBase": "https://api.corethink.ai/v1/sambanova/code",
+      "apiKey": "{{CORETHINK_API_KEY}}",
+      "title": "Corethink/DeepSeek-R1-0528"
+    },
+    {
+      "model": "MiniMax-M2.5",
+      "provider": "openai",
+      "apiBase": "https://api.corethink.ai/v1/sambanova/code",
+      "apiKey": "{{CORETHINK_API_KEY}}",
+      "title": "Corethink/MiniMax-M2.5"
     }
   ]
 }
