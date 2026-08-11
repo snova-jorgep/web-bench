@@ -28,6 +28,17 @@ from pathlib import Path
 import boto3
 from dotenv import load_dotenv
 
+# <repo-root> for config_env, so this works when run from another directory.
+sys.path.append(str(Path(__file__).resolve().parent))
+
+from config_env import (  # noqa: E402
+    config_env_from_argv,
+    internal_providers_from,
+    read_sidecar,
+    resolve_config_env,
+    row_config_env,
+)
+
 
 def _load_env():
     env_file = Path(__file__).resolve().parent / ".env"
@@ -130,7 +141,11 @@ def _parse_report(report_md: str) -> list[dict]:
     return rows
 
 
-def generate_report(report_dir: str, s3_prefix: str | None = None) -> str | None:
+def generate_report(
+    report_dir: str,
+    s3_prefix: str | None = None,
+    config_env: str | None = None,
+) -> str | None:
     """
     Parse Evaluation-*.report.md in report_dir, write a CSV, optionally upload to S3.
 
@@ -142,6 +157,14 @@ def generate_report(report_dir: str, s3_prefix: str | None = None) -> str | None
         Path to the generated CSV, or None if no data found.
     """
     report_dir_path = Path(report_dir)
+
+    # Invoked standalone against an existing eval-{hash} dir there is no flag, so fall
+    # back to the sidecar written at generation time, then to the registry default.
+    if config_env is None:
+        config_env = read_sidecar(report_dir_path)
+    config_env = resolve_config_env(config_env, None)
+    internal_providers = internal_providers_from(None)
+    print(f"[REPORT] config_env: {config_env}")
 
     # Find the top-level report: Evaluation-{hash}.report.md
     candidates = list(report_dir_path.glob("Evaluation-*.report.md"))
@@ -171,6 +194,9 @@ def generate_report(report_dir: str, s3_prefix: str | None = None) -> str | None
             "error_at_1": r["error_at_1"],
             "input_tokens": r["input_tokens"],
             "output_tokens": r["output_tokens"],
+            # Must stay LAST: the Athena regex expects config_env trailing. Applies to
+            # the Overview row too, which is the only one the unified view reads.
+            "config_env": row_config_env(config_env, provider, internal_providers),
         })
         print(f"  {provider}/{model} [{r['section']}]: "
               f"pass@1={r['pass_at_1']}% error@1={r['error_at_1']}%")
@@ -178,7 +204,7 @@ def generate_report(report_dir: str, s3_prefix: str | None = None) -> str | None
     csv_path = report_dir_path / f"results_{now}.csv"
     fieldnames = ["date", "provider", "model", "project",
                   "pass_at_1", "pass_at_2", "error_at_1",
-                  "input_tokens", "output_tokens"]
+                  "input_tokens", "output_tokens", "config_env"]
 
     with open(csv_path, "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter=";")
@@ -195,11 +221,12 @@ def generate_report(report_dir: str, s3_prefix: str | None = None) -> str | None
 
 
 if __name__ == "__main__":
+    cli_config_env = config_env_from_argv()
     if len(sys.argv) < 2:
-        print("Usage: webbench_report.py <report_dir> [s3_prefix]")
+        print("Usage: webbench_report.py <report_dir> [s3_prefix] [--config-env <id>]")
         print("  report_dir: path to apps/eval/report/eval-{hash}/")
         sys.exit(1)
 
     _load_env()
     s3_prefix = sys.argv[2] if len(sys.argv) > 2 else None
-    generate_report(sys.argv[1], s3_prefix)
+    generate_report(sys.argv[1], s3_prefix, config_env=cli_config_env)

@@ -8,6 +8,14 @@ from pathlib import Path
 import yaml
 from dotenv import load_dotenv
 
+# <repo-root> for config_env, so this works when run from another directory.
+sys.path.append(str(Path(__file__).resolve().parent))
+
+from config_env import (  # noqa: E402
+    config_env_from_argv,
+    resolve_config_env,
+    write_sidecar,
+)
 from webbench_report import generate_report
 
 
@@ -116,6 +124,7 @@ SMOKE_MODEL_COUNT = 1  # first non-skipped model per provider
 
 
 def main():
+    cli_config_env = config_env_from_argv()
     dry_run = "--dry-run" in sys.argv
     smoke = "--smoke" in sys.argv
 
@@ -126,6 +135,9 @@ def main():
 
     webbench_opts = cfg.get("webbench_options", {})
     use_stable = webbench_opts.get("use_stable_projects", True)
+
+    config_env = resolve_config_env(cli_config_env, cfg)
+    print(f"[INFO] config_env: {config_env}")
 
     model_entries = _build_model_entries(cfg)
     if not model_entries:
@@ -193,7 +205,15 @@ def main():
         finally:
             _restore_model_json(original_model_json)
 
-        generate_report(str(report_dir), s3_prefix)
+        # Sidecar written AFTER the node run, not before: report_dir is created by
+        # node, and pre-creating it just to drop a file in would be a gratuitous risk.
+        # Nothing is lost by waiting - if node dies there is no Evaluation-*.report.md,
+        # so a later report run has nothing to parse and the id would be moot. This
+        # differs from mini-SWE, where the second stage is a separate cloud eval and a
+        # crash in between IS recoverable.
+        write_sidecar(report_dir, config_env, cfg.get("base_urls", {}))
+
+        generate_report(str(report_dir), s3_prefix, config_env=config_env)
 
     print(f"\n[COMPLETE] WebBench run finished.")
     print(f"Local report: {report_dir}")

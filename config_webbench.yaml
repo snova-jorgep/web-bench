@@ -1,6 +1,10 @@
 # WebBench evaluation configuration
 # Mirrors the config_swebench.yaml pattern: same providers, same model aliases.
 
+# Which deployment this run targets. Ids are defined in <suite-root>/config_envs.yaml.
+# Override for a one-off run with --config-env <id> instead of editing this.
+config_env: cloud-prod
+
 webbench_options:
   use_stable_projects: true   # pass --use-stable-projects to webbench runner
 
