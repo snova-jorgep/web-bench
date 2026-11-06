@@ -59,6 +59,7 @@ model_mappings:
     GLM-5.3:                           "GLM-5.3"
     Kimi-K3:                           "Kimi-K3"
     Gemma-4-31B:                       "gemma-4-31B-it"
+    Arcee-Trinity:                     "Arcee-Trinity"
 
   Fireworks:
     Meta-Llama-3.1-405B-Instruct:      "accounts/fireworks/models/llama-v3p1-405b-instruct"
@@ -82,6 +83,7 @@ model_mappings:
     GLM-5.3:                           "accounts/fireworks/models/glm-5p3"
     Kimi-K3:                           "accounts/fireworks/models/kimi-k3"
     Gemma-4-31B:                       "accounts/fireworks/models/gemma-4-31b-it"
+    Arcee-Trinity:                     "not_available"
 
   Groq:
     Meta-Llama-3.1-405B-Instruct:      "not_available"
@@ -105,6 +107,7 @@ model_mappings:
     GLM-5.3:                           "not_available"
     Kimi-K3:                           "not_available"
     Gemma-4-31B:                       "not_available"
+    Arcee-Trinity:                     "not_available"
 
   Cerebras:
     Meta-Llama-3.1-405B-Instruct:      "not_available"
@@ -128,6 +131,7 @@ model_mappings:
     GLM-5.3:                           "not_available"
     Kimi-K3:                           "not_available"
     Gemma-4-31B:                       "not_available"
+    Arcee-Trinity:                     "not_available"
 
   Together:
     Meta-Llama-3.1-405B-Instruct:      "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo"
@@ -151,6 +155,7 @@ model_mappings:
     GLM-5.3:                           "zai-org/GLM-5.3"
     Kimi-K3:                           "moonshotai/Kimi-K3"
     Gemma-4-31B:                       "google/gemma-4-31B-it"
+    Arcee-Trinity:                     "not_available"
 
   Novita:
     Meta-Llama-3.1-405B-Instruct:      "not_available"
@@ -174,9 +179,11 @@ model_mappings:
     GLM-5.3:                           "zai-org/glm-5.3"
     Kimi-K3:                           "moonshotai/kimi-k3"
     Gemma-4-31B:                       "google/gemma-4-31b-it"
+    Arcee-Trinity:                     "not_available"
 
   Corethink:
     DeepSeek-V3.1:     "DeepSeek-V3.1"
     DeepSeek-R1-0528:  "DeepSeek-R1-0528"
     MiniMax-M2.5:      "MiniMax-M2.5"
     MiniMax-M2.7:      "MiniMax-M2.7"
+    Arcee-Trinity:     "not_available"
