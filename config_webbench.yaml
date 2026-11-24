@@ -60,6 +60,7 @@ model_mappings:
     Kimi-K3:                           "Kimi-K3"
     Gemma-4-31B:                       "gemma-4-31B-it"
     Arcee-Trinity:                     "Arcee-Trinity"
+    Nemotron-3-Ultra:                  "not_available"
 
   Fireworks:
     Meta-Llama-3.1-405B-Instruct:      "accounts/fireworks/models/llama-v3p1-405b-instruct"
@@ -84,6 +85,7 @@ model_mappings:
     Kimi-K3:                           "accounts/fireworks/models/kimi-k3"
     Gemma-4-31B:                       "accounts/fireworks/models/gemma-4-31b-it"
     Arcee-Trinity:                     "not_available"
+    Nemotron-3-Ultra:                  "accounts/fireworks/models/nemotron-3-ultra-nvfp4"
 
   Groq:
     Meta-Llama-3.1-405B-Instruct:      "not_available"
@@ -108,6 +110,7 @@ model_mappings:
     Kimi-K3:                           "not_available"
     Gemma-4-31B:                       "not_available"
     Arcee-Trinity:                     "not_available"
+    Nemotron-3-Ultra:                  "not_available"
 
   Cerebras:
     Meta-Llama-3.1-405B-Instruct:      "not_available"
@@ -132,6 +135,7 @@ model_mappings:
     Kimi-K3:                           "not_available"
     Gemma-4-31B:                       "not_available"
     Arcee-Trinity:                     "not_available"
+    Nemotron-3-Ultra:                  "not_available"
 
   Together:
     Meta-Llama-3.1-405B-Instruct:      "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo"
@@ -156,6 +160,7 @@ model_mappings:
     Kimi-K3:                           "moonshotai/Kimi-K3"
     Gemma-4-31B:                       "google/gemma-4-31B-it"
     Arcee-Trinity:                     "not_available"
+    Nemotron-3-Ultra:                  "not_available"
 
   Novita:
     Meta-Llama-3.1-405B-Instruct:      "not_available"
@@ -180,6 +185,7 @@ model_mappings:
     Kimi-K3:                           "moonshotai/kimi-k3"
     Gemma-4-31B:                       "google/gemma-4-31b-it"
     Arcee-Trinity:                     "not_available"
+    Nemotron-3-Ultra:                  "not_available"
 
   Corethink:
     DeepSeek-V3.1:     "DeepSeek-V3.1"
@@ -187,3 +193,4 @@ model_mappings:
     MiniMax-M2.5:      "MiniMax-M2.5"
     MiniMax-M2.7:      "MiniMax-M2.7"
     Arcee-Trinity:     "not_available"
+    Nemotron-3-Ultra:  "not_available"
